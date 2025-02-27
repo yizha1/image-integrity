@@ -1,10 +1,35 @@
-# Hands-on sign, publish and verify container images
+# Securing Cloud-Native Workloads: Hands-On with Notary Project, ORAS, and Ratify.
 
-## Why
+## Background
 
-Ensuring the integrity and authenticity of container images
+Securing your software supply chain for container images
 
-## The End-to-end scenario
+## Why ensuring the integrity and authenticity?
+
+Authenticity:
+
+Integrity:
+
+## The end-to-end solution
+
+<Picture>
+
+## Introduction on CNCF projects:
+
+Notary Project
+ORAS
+Ratify
+
+## Hands-on
+
+1. Set up environment
+2. Create a container image
+3. Choose your KMS
+4. Sign a container image
+5. Publish your container image and sigantures to production
+6. Verify your container image during deployment
+
+### Set up environement
 
 Signing:
 - Notary Project tooling Notation CLI
@@ -19,7 +44,6 @@ Verification:
 
 CI/CD:
 - Docker Desktop (Simulation)
-
 
 ## Build a container image
 
@@ -138,6 +162,9 @@ kubectl run demo-unsigned --image=$UNSIGNED
 ```
 
 ### Verify a signed image
+
+
+## Next Steps
 
 ```shell
 kubectl run demo-signed --image=$IMAGE
