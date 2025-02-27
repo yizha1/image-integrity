@@ -12,7 +12,8 @@ Integrity:
 
 ## The end-to-end solution
 
-<img width="730" alt="image" src="https://github.com/user-attachments/assets/d458c1a1-dc1d-4ae5-b13a-7050a7b2d1c1" />
+<img width="596" alt="image" src="https://github.com/user-attachments/assets/f67fd602-24ad-42fb-ac40-7be1700ee7cb" />
+
 
 
 ## Introduction on CNCF projects:
@@ -24,11 +25,11 @@ Ratify
 ## Hands-on
 
 1. Set up environment
-2. Build your container image
-3. Choose your Key Management System (KMS)
-4. Sign a container image
-5. Publish your container image and sigantures to production
-6. Verify your container image during deployment
+2. Build your container image to OCI image layout
+4. Choose your Key Management System (KMS)
+5. Sign a container image
+6. Publish your container image and sigantures to production
+7. Verify your container image during deployment
 
 ### Set up environement
 
