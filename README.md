@@ -6,15 +6,13 @@ Securing your software supply chain for container images
 
 ## Why ensuring the integrity and authenticity?
 
-Authenticity:
+Authenticity: Who should I trust?
 
-Integrity:
+Integrity: Has the data been tampered with?
 
 ## The end-to-end solution
 
 <img width="596" alt="image" src="https://github.com/user-attachments/assets/f67fd602-24ad-42fb-ac40-7be1700ee7cb" />
-
-
 
 ## Introduction on CNCF projects:
 
