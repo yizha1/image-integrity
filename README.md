@@ -132,17 +132,24 @@ helm install gatekeeper/gatekeeper --name-template=gatekeeper --namespace gateke
 
 ### Install Ratify
 
+Get your root CA certificate:
+
 ```shell
-helm repo add ratify https://ratify-project.github.io/ratify
-helm install ratify ratify/ratify --atomic --namespace gatekeeper-system --set-file notationCerts[0]="2.23.io.crt" --set featureFlags.RATIFY_CERT_ROTATION=true --set notation.trustPolicies[0].registryScopes[0]="docker.io/yizha1/net-monitor" --set notation.trustPolicies[0].trustStores[0]=ca:notationCerts[0] --set notation.trustPolicies[0].trustedIdentities[0]="x509.subject: CN=2.23.io\,O=Notary\,L=Seattle\,ST=WA\,C=US"
+cp ~/.config/notation/localkeys/mycompany.io.crt .
 ```
 
-
+```shell
+helm repo add ratify https://ratify-project.github.io/ratify
+helm install ratify ratify/ratify --atomic --namespace gatekeeper-system --set-file notationCerts[0]="mycompany.io.crt" --set featureFlags.RATIFY_CERT_ROTATION=true --set notation.trustPolicies[0].registryScopes[0]="docker.io/yizha1/net-monitor" --set notation.trustPolicies[0].trustStores[0]=ca:notationCerts[0] --set notation.trustPolicies[0].trustedIdentities[0]="x509.subject: CN=mycompany.io\,O=Notary\,L=Seattle\,ST=WA\,C=US"
+```
 
 ### Set up policies
 
 ```shell
+# You can customize your policy based using Rego language
 kubectl apply -f https://ratify-project.github.io/ratify/library/default/template.yaml
+
+# Deny or Warn
 kubectl apply -f https://ratify-project.github.io/ratify/library/default/samples/constraint.yaml
 ```
 
@@ -151,16 +158,20 @@ kubectl apply -f https://ratify-project.github.io/ratify/library/default/samples
 ### Verify an unsigned image
 
 ```shell
-export UNSIGNED=docker.io/yizha1/unsigned:v1
-kubectl run demo-unsigned --image=$UNSIGNED
+export IMAGE_UNSIGNED=docker.io/yizha1/unsigned:v1
+kubectl run demo-unsigned --image=$IMAGE_UNSIGNED
 ```
+The result is per your definition of your policy.
+
+Check the log of Ratify
 
 ### Verify a signed image
 
+```shell
+kubectl run demo-signed --image=$IMAGE_SIGNED
+```
 
 ## Next Steps
 
-```shell
-kubectl run demo-signed --image=$IMAGE
-```
+
 
