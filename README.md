@@ -12,7 +12,8 @@ Integrity:
 
 ## The end-to-end solution
 
-<Picture>
+<img width="730" alt="image" src="https://github.com/user-attachments/assets/d458c1a1-dc1d-4ae5-b13a-7050a7b2d1c1" />
+
 
 ## Introduction on CNCF projects:
 
