@@ -6,12 +6,20 @@ Ensuring the integrity and authenticity of container images
 
 ## The End-to-end scenario
 
+Signing:
 - Notary Project tooling Notation CLI
+
+Publishing:
 - ORAS
+
+Verification:
 - OPA Gatekeeper
 - Ratify
-- Docker desktop
 - Helm
+
+CI/CD:
+- Docker Desktop (Simulation)
+
 
 ## Build a container image
 
