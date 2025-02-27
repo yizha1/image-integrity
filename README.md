@@ -23,8 +23,8 @@ Ratify
 ## Hands-on
 
 1. Set up environment
-2. Create a container image
-3. Choose your KMS
+2. Build your container image
+3. Choose your Key Management System (KMS)
 4. Sign a container image
 5. Publish your container image and sigantures to production
 6. Verify your container image during deployment
@@ -42,27 +42,21 @@ Verification:
 - Ratify
 - Helm
 
-CI/CD:
-- Docker Desktop (Simulation)
+Docker Desktop
 
-## Build a container image
+### Build your container image
 
 ```shell
 export IMAGE=docker.io/yizha1/net-monitor:v1
-
 docker buildx build . -f Dockerfile -o type=oci,dest=net-monitor.tar -t $IMAGE
-
 mkdir net-monitor
-
 tar -xf net-monitor.tar -C net-monitor
 ```
 
-## Sign a container image
-
-### Key Management
+### Choose your KMS
 
 ```shell
-notation cert generate-test 2.23.io --default
+notation cert generate-test mycompany.io --default
 notation cert ls
 notation key ls
 ```
@@ -95,7 +89,7 @@ oras cp -r ./net-monitor:v1 --from-oci-layout docker.io/yizha1/net-monitor:v1
 
 ### View from docker hub
 
-Switch to the docker hub to view the image
+Switch to [my docker hub](https://hub.docker.com/repositories/yizha1)
 
 
 ## Verify a container image in CI/CD pipelines.
