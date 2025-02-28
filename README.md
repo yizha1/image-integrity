@@ -29,9 +29,9 @@ KubeConNA 2024 keynote: https://youtu.be/YQuzhSGGPNk
 
 ### Introduction on CNCF projects:
 
-- [Notary Project](https://notaryproject.dev/)
+- [Notary Project](https://notaryproject.dev/): to provide a cross-industry standardized tools for securing software supply chains by ensuring integrity and authenticity of container images and other artifacts.
 - [ORAS](https://oras.land/)
-- [Ratify](https://ratify.dev/)
+- [Ratify](https://ratify.dev/): At Ratify, our mission is to safeguard the container supply chain by ratifying trustworthy and compliant artifacts. We achieve this through a robust and pluggable verification engine that includes built-in verifiers. 
 
 ### Steps
 
