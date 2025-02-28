@@ -121,6 +121,11 @@ Switch to [my docker hub](https://hub.docker.com/repositories/yizha1)
 
 ## Verify a container image in CI/CD pipelines.
 
+CI/CD pipelines:
+- GitHub actions
+- Azure DevOps (ADO)
+- FluxCD
+
 Note: Use Notation CLI to simulate CI/CD pipelines
 
 ```json
@@ -153,6 +158,12 @@ notation verify $IMAGE_SIGNED
 Knowledge points:
 - OPA: Open Policy Agent, an open-source, general-purpose policy engine that enables fine-grained, declarative authorization and policy enforcement across various systems, including Kubernetes, microservices, CI/CD pipelines, and APIs.
 - OPA Gatekeeper: A policy enforcement framework for Kubernetes that uses Open Policy Agent (OPA) to enforce fine-grained, customizable policies on Kubernetes resources. It works by intercepting API requests and evaluate them against policies before resources are created, modified or deleted.
+
+Alternative:
+- Azure policy + Ratify on Azure
+- AKS Image integrity (Preview) on Azure
+- Kyverno
+
 
 ### Install Gatekeeper
 
