@@ -60,14 +60,14 @@ Verification:
 ### Build your container image
 
 Knowledge points:
-- OCI: The Open Container Initiative (OCI) is a Linux Foundation project that aims to establish open standards for container technology around image formats, runtimes, and distribution.
-- OCI Image layout: The OCI Image Layout specifies how to organize and store the image files on disk.
+- [OCI](https://github.com/opencontainers): The Open Container Initiative (OCI) is a Linux Foundation project that aims to establish open standards for container technology around image formats, runtimes, and distribution.
+- [OCI Image layout](https://github.com/opencontainers/image-spec/blob/v1.1.0/image-layout.md): The OCI Image Layout specifies how to organize and store the image files on disk.
 
 
 ```shell
 export IMAGE_SIGNED=docker.io/yizha1/net-monitor:v1
 docker buildx create --use
-docker buildx build . -f Dockerfile -o type=oci,dest=net-monitor.tar -t $IMAGE
+docker buildx build . -f Dockerfile -o type=oci,dest=net-monitor.tar -t $IMAGE_SIGNED
 mkdir net-monitor
 tar -xf net-monitor.tar -C net-monitor
 ```
@@ -108,7 +108,7 @@ notation list --oci-layout ./net-monitor:v1
 ## Publishing both the container image and signature
 
 ```shell
-oras cp -r ./net-monitor:v1 --from-oci-layout docker.io/yizha1/net-monitor:v1
+oras cp -r ./net-monitor:v1 --from-oci-layout $IMAGE_SIGNED
 ```
 
 ![image](https://github.com/user-attachments/assets/a919f28f-58ff-498b-816b-41e458f1732c)
@@ -135,7 +135,7 @@ Note: Use Notation CLI to simulate CI/CD pipelines
          },
          "trustStores": [ "ca:mycert" ],
          "trustedIdentities": [
-             "x509.subject: CN=2.23.io,O=Notary,L=Seattle,ST=WA,C=US"
+             "x509.subject: CN=mycompany.io,O=Notary,L=Seattle,ST=WA,C=US"
          ]
      }
  ]
@@ -145,7 +145,7 @@ Note: Use Notation CLI to simulate CI/CD pipelines
 ```shell
 notation policy import mypolicy.json
 notation policy show
-notation verify $IMAGE
+notation verify $IMAGE_SIGNED
 ```
 
 ## Verify a container image before pulling to K8s
@@ -167,7 +167,7 @@ cp ~/.config/notation/localkeys/mycompany.io.crt .
 
 ```shell
 helm repo add ratify https://ratify-project.github.io/ratify
-helm install ratify ratify/ratify --atomic --namespace gatekeeper-system --set-file notationCerts[0]="mycompany.io.crt" --set featureFlags.RATIFY_CERT_ROTATION=true --set notation.trustPolicies[0].registryScopes[0]="docker.io/yizha1/net-monitor" --set notation.trustPolicies[0].trustStores[0]=ca:notationCerts[0] --set notation.trustPolicies[0].trustedIdentities[0]="x509.subject: CN=mycompany.io\,O=Notary\,L=Seattle\,ST=WA\,C=US"
+helm install ratify ratify/ratify --atomic --namespace gatekeeper-system --set featureFlags.RATIFY_CERT_ROTATION=true --set-file notationCerts[0]="mycompany.io.crt"  --set notation.trustPolicies[0].registryScopes[0]="docker.io/yizha1/net-monitor" --set notation.trustPolicies[0].trustStores[0]=ca:notationCerts[0] --set notation.trustPolicies[0].trustedIdentities[0]="x509.subject: CN=mycompany.io\,O=Notary\,L=Seattle\,ST=WA\,C=US"
 ```
 
 ### Set up policies
