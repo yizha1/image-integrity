@@ -23,17 +23,17 @@ KubeConNA 2024 keynote: https://youtu.be/YQuzhSGGPNk
 <img width="1056" alt="image" src="https://github.com/user-attachments/assets/9a41b29d-f567-4d3d-9cb1-33cbcfebe279" />
 
 
-What is the focus of hands-on:
+## Hands-on:
 
 <img width="596" alt="image" src="https://github.com/user-attachments/assets/f67fd602-24ad-42fb-ac40-7be1700ee7cb" />
 
-## Introduction on CNCF projects:
+### Introduction on CNCF projects:
 
 Notary Project
 ORAS
 Ratify
 
-## Hands-on
+### Steps
 
 1. Set up environment
 2. Build your container image to OCI image layout
