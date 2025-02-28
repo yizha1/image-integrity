@@ -6,11 +6,24 @@ Securing your software supply chain for container images
 
 ## Why ensuring the integrity and authenticity?
 
-Authenticity: Who should I trust?
+Authenticity: 
 
-Integrity: Has the data been tampered with?
+Who should I trust?
+
+Integrity: 
+
+Has the data been tampered with?
 
 ## The end-to-end solution
+
+The big picture:
+
+KubeConNA 2024 keynote: https://youtu.be/YQuzhSGGPNk
+
+<img width="1056" alt="image" src="https://github.com/user-attachments/assets/9a41b29d-f567-4d3d-9cb1-33cbcfebe279" />
+
+
+What is the focus of hands-on:
 
 <img width="596" alt="image" src="https://github.com/user-attachments/assets/f67fd602-24ad-42fb-ac40-7be1700ee7cb" />
 
