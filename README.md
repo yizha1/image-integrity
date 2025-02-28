@@ -8,11 +8,13 @@ Securing your software supply chain for container images
 
 Authenticity: 
 
-Who should I trust?
+How can I ensure images are from trusted identities?
 
 Integrity: 
 
-Has the data been tampered with?
+How can I ensure images are not modified since built?
+
+
 
 ## The end-to-end solution
 
@@ -42,7 +44,7 @@ Ratify
 6. Publish your container image and sigantures to production
 7. Verify your container image during deployment
 
-### Set up environement
+### Get prepared
 
 Signing:
 - Notary Project tooling Notation CLI
@@ -59,15 +61,26 @@ Docker Desktop
 
 ### Build your container image
 
+Knowledge points:
+- OCI: The Open Container Initiative (OCI) is a Linux Foundation project that aims to establish open standards for container technology around image formats, runtimes, and distribution.
+- OCI Image layout:
+
+
 ```shell
 export IMAGE_SIGNED=docker.io/yizha1/net-monitor:v1
-docker buildx use
+docker buildx create --use
 docker buildx build . -f Dockerfile -o type=oci,dest=net-monitor.tar -t $IMAGE
 mkdir net-monitor
 tar -xf net-monitor.tar -C net-monitor
 ```
 
 ### Choose your KMS
+
+Supported KMS:
+- Azure Key Vault
+- AWS Signer
+- Alibaba Cloud Secrets manager
+
 
 ```shell
 notation cert generate-test mycompany.io --default
@@ -96,10 +109,12 @@ notation list --oci-layout ./net-monitor:v1
 
 ## Publishing both the container image and signature
 
-
 ```shell
 oras cp -r ./net-monitor:v1 --from-oci-layout docker.io/yizha1/net-monitor:v1
 ```
+
+![image](https://github.com/user-attachments/assets/a919f28f-58ff-498b-816b-41e458f1732c)
+
 
 ### View from docker hub
 
