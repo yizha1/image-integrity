@@ -44,6 +44,8 @@ KubeConNA 2024 keynote: https://youtu.be/YQuzhSGGPNk
 
 ### Get prepared
 
+Docker Desktop & WSL2
+
 Signing:
 - Notary Project tooling Notation CLI
 
@@ -54,8 +56,6 @@ Verification:
 - OPA Gatekeeper
 - Ratify
 - Helm
-
-Docker Desktop
 
 ### Build your container image
 
