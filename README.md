@@ -63,7 +63,7 @@ Docker Desktop
 
 Knowledge points:
 - OCI: The Open Container Initiative (OCI) is a Linux Foundation project that aims to establish open standards for container technology around image formats, runtimes, and distribution.
-- OCI Image layout:
+- OCI Image layout: The OCI Image Layout specifies how to organize and store the image files on disk.
 
 
 ```shell
