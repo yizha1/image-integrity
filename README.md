@@ -78,7 +78,7 @@ Supported KMS:
 - Azure Key Vault
 - AWS Signer
 - Alibaba Cloud Secrets manager
-
+- Hashicorp Vault (alpha)
 
 ```shell
 notation cert generate-test mycompany.io --default
@@ -149,6 +149,10 @@ notation verify $IMAGE_SIGNED
 ```
 
 ## Verify a container image before pulling to K8s
+
+Knowledge points:
+- OPA: Open Policy Agent, an open-source, general-purpose policy engine that enables fine-grained, declarative authorization and policy enforcement across various systems, including Kubernetes, microservices, CI/CD pipelines, and APIs.
+- OPA Gatekeeper: A policy enforcement framework for Kubernetes that uses Open Policy Agent (OPA) to enforce fine-grained, customizable policies on Kubernetes resources. It works by intercepting API requests and evaluate them against policies before resources are created, modified or deleted.
 
 ### Install Gatekeeper
 
