@@ -2,7 +2,7 @@
 
 ## Background
 
-Securing your software supply chain for container images
+Software supply chain attacks are rapidly increasing. In cloud-native world, securing your software supply chain for containerized workloads is critical to prevent these escalating threats.
 
 ## Why ensuring the integrity and authenticity?
 
@@ -13,8 +13,6 @@ How can I ensure images are from trusted identities?
 Integrity: 
 
 How can I ensure images are not modified since built?
-
-
 
 ## The end-to-end solution
 
