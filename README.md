@@ -60,7 +60,7 @@ Docker Desktop
 ### Build your container image
 
 ```shell
-export IMAGE=docker.io/yizha1/net-monitor:v1
+export IMAGE_SIGNED=docker.io/yizha1/net-monitor:v1
 docker buildx --use
 docker buildx build . -f Dockerfile -o type=oci,dest=net-monitor.tar -t $IMAGE
 mkdir net-monitor
