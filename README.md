@@ -47,10 +47,10 @@ KubeConNA 2024 keynote: https://youtu.be/YQuzhSGGPNk
 Docker Desktop & WSL2
 
 Signing:
-- Notary Project tooling Notation CLI
+- Notation CLI, Notary Project tooling
 
 Publishing:
-- ORAS
+- ORAS CLI
 
 Verification:
 - OPA Gatekeeper
