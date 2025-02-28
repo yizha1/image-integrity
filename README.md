@@ -61,7 +61,7 @@ Docker Desktop
 
 ```shell
 export IMAGE_SIGNED=docker.io/yizha1/net-monitor:v1
-docker buildx --use
+docker buildx use
 docker buildx build . -f Dockerfile -o type=oci,dest=net-monitor.tar -t $IMAGE
 mkdir net-monitor
 tar -xf net-monitor.tar -C net-monitor
