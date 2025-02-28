@@ -29,9 +29,9 @@ KubeConNA 2024 keynote: https://youtu.be/YQuzhSGGPNk
 
 ### Introduction on CNCF projects:
 
-Notary Project
-ORAS
-Ratify
+- [Notary Project](https://notaryproject.dev/)
+- [ORAS](https://oras.land/)
+- [Ratify](https://ratify.dev/)
 
 ### Steps
 
